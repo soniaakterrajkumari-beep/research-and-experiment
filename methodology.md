@@ -15,8 +15,8 @@
 * Apply log-transformation (`np.log1p`) to normalise the target variable `SalePrice`.
 
 ## 4. Feature Engineering Plan
-* Generate composite metric `TotalSF` = `1stFlrSF` + `2ndFlrSF` + `TotalBsmtSF` (when available).
-* Generate age metric `HouseAge` = `YrSold` - `YearBuilt`.
+* Generate composite metric `TotalSF` from total area dimensions.
+* Generate age metric `HouseAge` = `Year.Sold` - `Year.Built`.
 * Encode categorical features using One-Hot Encoding (`pd.get_dummies`).
 * Scale numerical inputs using `StandardScaler`.
 
