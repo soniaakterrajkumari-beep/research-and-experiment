@@ -4,7 +4,7 @@
 * **Question:** Can an ensemble model (Random Forest Regressor) outperform a linear baseline model (Ridge Regression) in accurately predicting house sale prices using structural and spatial features?
 
 ## 2. Dataset Description
-* **Source:** Ames Housing Dataset (via OpenIntro).
+* **Source:** Ames Housing Dataset (via OpenML).
 * **Target Variable:** `SalePrice` (Continuous monetary valuation of homes).
 * **Features:** Structural and neighborhood characteristics including ground area, room counts, construction years, and quality ratings.
 * **Limitations:** Contains sparse missing entries across structural columns and exhibits right-skewness in the raw price target distribution.
@@ -15,8 +15,7 @@
 * Apply log-transformation (`np.log1p`) to normalise the target variable `SalePrice`.
 
 ## 4. Feature Engineering Plan
-* Generate composite metric `TotalSF` from total area dimensions.
-* Generate age metric `HouseAge` = `year.sold` - `year.built`.
+* Generate age metric `HouseAge` = `YrSold` - `YearBuilt`.
 * Encode categorical features using One-Hot Encoding (`pd.get_dummies`).
 * Scale numerical inputs using `StandardScaler`.
 
