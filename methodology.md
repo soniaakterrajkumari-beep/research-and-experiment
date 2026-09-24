@@ -16,7 +16,7 @@
 
 ## 4. Feature Engineering Plan
 * Generate composite metric `TotalSF` from total area dimensions.
-* Generate age metric `HouseAge` = `Year.Sold` - `Year.Built`.
+* Generate age metric `HouseAge` = `year.sold` - `year.built`.
 * Encode categorical features using One-Hot Encoding (`pd.get_dummies`).
 * Scale numerical inputs using `StandardScaler`.
 
