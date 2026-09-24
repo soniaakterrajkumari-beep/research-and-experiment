@@ -1,27 +1,29 @@
 # Methodology
 
-## 1. Research Question
-* **Refined Question:** Can ensemble tree-based models (Random Forest) outperform linear baseline models (Ridge Regression) in accurately predicting house sale prices?
+## 1. Refined Research Question
+* **Question:** Can an ensemble model (Random Forest Regressor) outperform a linear baseline model (Ridge Regression) in accurately predicting house sale prices using structural and spatial features?
 
 ## 2. Dataset Description
-* **Source:** Ames Housing Dataset.
-* **Features:** 79 explanatory variables (square footage, year built, quality ratings, etc.).
-* **Target Variable:** `SalePrice` (Continuous monetary value).
-* **Size:** 1,460 rows and 81 columns.
-* **Limitations:** Missing values in sparse categories and skewness in target distribution.
+* **Source:** Ames Housing Dataset (via OpenIntro).
+* **Target Variable:** `SalePrice` (Continuous monetary valuation of homes).
+* **Features:** Structural and neighborhood characteristics including ground area, room counts, construction years, and quality ratings.
+* **Limitations:** Contains sparse missing entries across structural columns and exhibits right-skewness in the raw price target distribution.
 
 ## 3. Data Cleaning Plan
-* Impute numerical missing values using **median** and categorical using **mode**.
-* Log-transform skewed numerical features and target variable `SalePrice`.
+* Impute continuous numerical missing values using the **median**.
+* Impute missing categorical entries using the most frequent **mode**.
+* Apply log-transformation (`np.log1p`) to normalise the target variable `SalePrice`.
 
 ## 4. Feature Engineering Plan
-* Create `TotalSF` = `TotalBsmtSF` + `1stFlrSF` + `2ndFlrSF`.
-* Create `HouseAge` = `YrSold` - `YearBuilt`.
-* Apply One-Hot Encoding and Standard Scaling.
+* Generate composite metric `TotalSF` = `1stFlrSF` + `2ndFlrSF` + `TotalBsmtSF` (when available).
+* Generate age metric `HouseAge` = `YrSold` - `YearBuilt`.
+* Encode categorical features using One-Hot Encoding (`pd.get_dummies`).
+* Scale numerical inputs using `StandardScaler`.
 
-## 5. Model Selection
-* **Model 1 (Baseline):** **Ridge Regression**
-* **Model 2 (Advanced):** **Random Forest Regressor**
+## 5. Model Selection & Rationale
+* **Baseline Model:** **Ridge Regression** — Selected as a linear benchmark to model underlying linear relationships while preventing overfitting through L2 regularization.
+* **Advanced Model:** **Random Forest Regressor** — Selected as an ensemble tree model capable of capturing complex non-linear interactions and feature dependencies.
 
-## 6. Evaluation Metrics
-* **Metrics:** Root Mean Squared Error (RMSE) on log scale and R2 Score.
+## 6. Evaluation Metrics & Rationale
+* **Root Mean Squared Error (RMSE):** Selected to quantify prediction error magnitude on the log-scale, penalising larger errors appropriately.
+* **R-squared Score ($R^2$):** Selected to evaluate the proportion of variance explained by the models relative to total variance.

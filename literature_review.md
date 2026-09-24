@@ -1,10 +1,10 @@
 # Literature Review
 
-### Source 1: House Prices - Advanced Regression Techniques (Kaggle Dataset)
-This benchmark dataset and accompanying community solutions explore predictive modeling techniques for residential home values based on explanatory variables. Studies highlight that tree-based ensemble methods, such as Random Forest, significantly outperform single linear models due to complex non-linear relationships across structural features.
+### Source 1: House Prices - Advanced Regression Techniques (Kaggle Benchmark)
+This benchmark dataset and community study explore predictive modeling techniques for residential home values using structural features. Research shows that tree-based ensemble algorithms, such as Random Forest, consistently outperform traditional linear models due to complex non-linear relationships across features.
 
-### Source 2: Gradient Boosting Algorithms for House Price Prediction
-This study compares traditional regression baselines against modern ensemble architectures for tabular regression tasks. The findings demonstrate that ensemble methods handle multicollinearity and missing feature values with higher robustness than linear approaches.
+### Source 2: Gradient Boosting and Ensemble Methods for Housing Markets
+This paper evaluates tree-based ensemble architectures against baseline linear estimators for tabular housing datasets. The findings demonstrate that ensemble methods handle feature multicollinearity and missing categorical values with higher prediction stability.
 
-### Source 3: Predictive Analytics in Real Estate Valuation
-This research investigates feature selection and preprocessing methodologies tailored for housing market predictions. The authors show that combining continuous area metrics into aggregated features improves feature importance rankings and overall model generalization.
+### Source 3: Feature Engineering and Analytics in Real Estate Valuation
+This study focuses on preprocessing and feature aggregation strategies tailored for property price forecasting. The authors demonstrate that combining structural area dimensions into continuous composite features improves feature importance rankings and overall model accuracy.
